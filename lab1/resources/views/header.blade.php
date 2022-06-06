@@ -94,17 +94,17 @@
   <header>
 
     <div id="header_wrapper" class="main_wrapper">
-      <a href="./index.php" title="Gardener Home">
+      <a href="/" title="Gardener Home">
         <img src="./images/logo.svg" alt="logo" width="315" height="70">
       </a>
       <nav>
 
         <ul id="navlist">
-          <li><a href="./index.php" title="Gardener Home">Home</a></li>
-          <li><a href="./mine.php" title="Gardener Mine tells you items you owns">Mine</a></li>
-          <li><a href="./timeline.php" title="Gardener Timeline shows your tracking of your plants">Timeline</a></li>
-          <li><a href="./community.php" title="Gardener Community shows what other people is doing">Community</a></li>
-          <li><a href="./newsletter.php" title="Click and subscribe our newsletter weekly">Newsletter</a></li>
+          <li><a href="/" title="Gardener Home">Home</a></li>
+          <li><a href="/mine" title="Gardener Mine tells you items you owns">Mine</a></li>
+          <li><a href="/timeline" title="Gardener Timeline shows your tracking of your plants">Timeline</a></li>
+          <li><a href="/community" title="Gardener Community shows what other people is doing">Community</a></li>
+          <li><a href="/newsletter" title="Click and subscribe our newsletter weekly">Newsletter</a></li>
         </ul>
 
       </nav>
