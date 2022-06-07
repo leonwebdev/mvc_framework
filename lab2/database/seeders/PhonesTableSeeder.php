@@ -43,7 +43,7 @@ class PhonesTableSeeder extends Seeder
             'name' => 'OnePlus 10 Pro',
             'screen' => 'LTPO2 Fluid AMOLED',
             'battery' => 5000,
-            'image' => '4.jpg',
+            'image' => '4.webp',
             'description' => "The OnePlus 10 Pro is the latest flagship phone from OnePlus - and while we though it would be the only entry in the 10 line, rumours now say a regular model is still on the way. The 10 Pro's striking design and specs were enough to earn it one of our coveted Best of CES Awards earlier this year, and a Recommended badge in our 4-star OnePlus 10 Pro review.",
         ]);
 
