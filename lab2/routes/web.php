@@ -18,3 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/phones/index', "App\Http\Controllers\PhonesController@index");
+Route::get('/phones/{id}', "App\Http\Controllers\PhonesController@show");
+Route::get('/', function () {
+    $title = 'Home';
+    return view('home', compact('title'));
+});

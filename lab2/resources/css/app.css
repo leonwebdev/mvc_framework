@@ -4,3 +4,8 @@ img.thumbnail {
     width: 100px;
     height: auto;
 }
+
+img.detail {
+    width: 500px;
+    height: auto;
+}

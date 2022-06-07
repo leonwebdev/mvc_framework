@@ -7,6 +7,11 @@ use \App\Models\Phone;
 
 class PhonesController extends Controller
 {
+    /**
+     * Show list view
+     *
+     * @return void
+     */
     public function index()
     {
         $phones = Phone::all();
@@ -15,11 +20,17 @@ class PhonesController extends Controller
         return view('phones/index', compact('phones', 'title'));
     }
 
-    public function show()
+    /**
+     * Show Detail
+     *
+     * @param string $id phone -id
+     * @return void
+     */
+    public function show($id = null)
     {
-        $phones = Phone::all();
-        $title = 'Phone List';
+        $phone = Phone::find($id);
+        $title = $phone->name;
 
-        return view('phones/index', compact('phones', 'title'));
+        return view('phones/show', compact('phone', 'title'));
     }
 }

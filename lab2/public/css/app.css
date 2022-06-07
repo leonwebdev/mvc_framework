@@ -9,3 +9,8 @@ img.thumbnail {
     height: auto;
 }
 
+img.detail {
+    width: 500px;
+    height: auto;
+}
+
