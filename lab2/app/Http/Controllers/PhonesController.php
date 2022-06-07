@@ -10,7 +10,16 @@ class PhonesController extends Controller
     public function index()
     {
         $phones = Phone::all();
+        $title = 'Phone List';
 
-        return view('phones/index', compact('phones'));
+        return view('phones/index', compact('phones', 'title'));
+    }
+
+    public function show()
+    {
+        $phones = Phone::all();
+        $title = 'Phone List';
+
+        return view('phones/index', compact('phones', 'title'));
     }
 }

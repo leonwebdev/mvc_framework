@@ -1,1 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+img.thumbnail {
+    width: 100px;
+    height: auto;
+}
