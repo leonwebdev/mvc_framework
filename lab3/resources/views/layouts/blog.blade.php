@@ -19,6 +19,7 @@
 
     <!-- Responsive navbar-->
     @include('partials/nav')
+    @include('partials/flash')
 
     @yield('header')
 
@@ -35,7 +36,7 @@
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+            <p class="m-0 text-center text-white">Copyright &copy; LihNG Yao 2022</p>
         </div>
     </footer>
     <script src="/js/app.js"></script>
