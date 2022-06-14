@@ -9,6 +9,11 @@ use App\Models\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'admin']);
+    }
+
     public function index()
     {
         $posts = Post::with('category')->latest()->paginate($this->MAX_PER_PAGE);
