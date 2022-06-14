@@ -37,14 +37,14 @@ Route::post('/admin/posts', [App\Http\Controllers\Admin\PostsController::class, 
 
 Route::get(
         '/posts/edit/{post}',
-        [App\Http\Controllers\PostsController::class, 'edit']
+        [App\Http\Controllers\Admin\PostsController::class, 'edit']
 )
         ->name('edit');
 
 Route::put(
         '/posts/{id}',
-        [App\Http\Controllers\PostsController::class, 'update']
+        [App\Http\Controllers\Admin\PostsController::class, 'update']
 )
         ->name('update');
 
-Route::delete('/posts/{id}', [App\Http\Controllers\PostsController::class, 'destroy']);
+Route::delete('/posts/{id}', [App\Http\Controllers\Admin\PostsController::class, 'destroy']);

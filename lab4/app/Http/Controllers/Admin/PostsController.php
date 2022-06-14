@@ -40,6 +40,17 @@ class PostsController extends Controller
         return redirect('/admin');
     }
 
+    public function destroy(Request $request, $id)
+    {
+        $post = Post::find($id);
+        if ($post->delete()) {
+            session()->flash('success', 'Post was deleted');
+            return redirect('/admin');
+        }
+        session()->flash('error', 'There was a problem deleting the post');
+        return redirect('/admin');
+    }
+
     public function edit(Post $post)
     {
         $title = 'Edit A Post';
