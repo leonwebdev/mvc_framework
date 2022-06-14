@@ -3,7 +3,7 @@
 @section('content')
     <h1>Create a new Post</h1>
 
-    <form action="/admin/posts" method="post" class="mb-5">
+    <form enctype="multipart/form-data" action="/admin/posts" method="post" class="mb-5">
         @csrf
         <div class="mb-3">
             <label class="form-label" for="title">Title</label><br />
@@ -12,6 +12,15 @@
                 <span style="color: #dd0000">{{ $message }}</span>
             @enderror
         </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="image">Image</label><br />
+            <input class="form-control" type="file" name="image">
+            @error('image')
+                <span style="color: #dd0000">{{ $message }}</span>
+            @enderror
+        </div>
+
 
         <div class="mb-3">
             <label class="form-label" for="content">Content</label><br />

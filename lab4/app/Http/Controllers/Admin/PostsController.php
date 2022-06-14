@@ -28,11 +28,16 @@ class PostsController extends Controller
         $valid = $request->validate([
             'title' => 'required|string',
             'content' => 'required|string',
-            'category_id' => 'required|integer'
+            'category_id' => 'required|integer',
+            'image' => 'nullable|image'
         ]);
 
-        $valid['image'] = $valid['image'] ?? '000.jpg';
+        if ($request->file('image')) {
+            $path =  $request->file('image')->store('public');
+        }
 
+        $valid['image'] = basename($path ?? 'default.jpg');
+        //dd($path);
         Post::create($valid);
 
         session()->flash('success', 'Post successfully created!');
