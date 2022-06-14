@@ -62,4 +62,32 @@ class PostsController extends Controller
         $cats = Category::all();
         return view('admin/edit', compact('post', 'cats'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $valid = $request->validate([
+            'id' => 'required|integer',
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'category_id' => 'required|integer',
+            'image' => 'nullable|image'
+        ]);
+
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('public');
+        }
+
+        $post = Post::find($id);
+
+        $valid['image'] = basename($path ?? $post->image);
+
+        $post->update($valid);
+
+        if ($post->save()) {
+            session()->flash('success', 'Post was successfully updated');
+        } else {
+            session()->flash('error', 'There was a problem updating the post');
+        }
+        return redirect('/admin');
+    }
 }
