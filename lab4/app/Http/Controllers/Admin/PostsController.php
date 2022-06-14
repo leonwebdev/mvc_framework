@@ -39,4 +39,11 @@ class PostsController extends Controller
 
         return redirect('/admin');
     }
+
+    public function edit(Post $post)
+    {
+        $title = 'Edit A Post';
+        $cats = Category::all();
+        return view('admin/edit', compact('post', 'cats'));
+    }
 }
