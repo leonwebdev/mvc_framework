@@ -16,7 +16,7 @@
                     @foreach ($phones as $phone)
                         <tr>
                             <td><a class="text-decoration-none" href="/phones/{{ $phone->id }}"><img class="thumbnail"
-                                        src="/images/{{ $phone->image }}"></a>
+                                        src="/storage/{{ $phone->image }}"></a>
                             </td>
                             <td><a class="text-decoration-none" href="/phones/{{ $phone->id }}">{{ $phone->name }}</a>
                             </td>

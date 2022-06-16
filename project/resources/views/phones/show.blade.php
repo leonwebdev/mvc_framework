@@ -4,7 +4,7 @@
     <section class="mt-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-6 mb-5"><img src="/images/{{ $phone->image }}" class="detail"></div>
+                <div class="col-6 mb-5"><img src="/storage/{{ $phone->image }}" class="detail"></div>
             </div>
             <div class="row justify-content-center">
                 <ul class="col-6 mb-5">
