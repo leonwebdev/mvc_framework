@@ -34,11 +34,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /*
  ---------  Admin User Routes -------------------------------------------
  */
+Route::middleware(['auth', 'admin'])->group(function () {
 
-Route::get('/admin', "App\Http\Controllers\Admin\PhonesController@index");
-Route::get('/admin/create', "App\Http\Controllers\Admin\PhonesController@create")->name('create');
-Route::post('/admin', "App\Http\Controllers\Admin\PhonesController@store");
-Route::get('/admin/edit/{id}', "App\Http\Controllers\Admin\PhonesController@edit")->name('edit');
-Route::put('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@update")->name('update');
-Route::delete('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@destroy");
-Route::post('/admin/search', "App\Http\Controllers\Admin\PhonesController@search");
+    Route::get('/admin', "App\Http\Controllers\Admin\PhonesController@index");
+    Route::get('/admin/create', "App\Http\Controllers\Admin\PhonesController@create")->name('create');
+    Route::post('/admin', "App\Http\Controllers\Admin\PhonesController@store");
+    Route::get('/admin/edit/{id}', "App\Http\Controllers\Admin\PhonesController@edit")->name('edit');
+    Route::put('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@update")->name('update');
+    Route::delete('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@destroy");
+    Route::post('/admin/search', "App\Http\Controllers\Admin\PhonesController@search");
+});
