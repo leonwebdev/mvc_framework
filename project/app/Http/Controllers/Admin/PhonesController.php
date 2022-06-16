@@ -21,6 +21,25 @@ class PhonesController extends Controller
     }
 
     /**
+     * Display a listing of the search.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $phones = Phone::query()
+            ->where('name', 'LIKE', "%$search%")
+            ->orWhere('screen', 'LIKE', "%$search%")
+            ->orWhere('battery', 'LIKE', "%$search%")
+            ->orWhere('description', 'LIKE', "%$search%")
+            ->get();
+        $title = 'Administrate Dashboard';
+        return view('admin/index', compact('phones', 'title'));
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

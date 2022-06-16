@@ -41,3 +41,4 @@ Route::post('/admin', "App\Http\Controllers\Admin\PhonesController@store");
 Route::get('/admin/edit/{id}', "App\Http\Controllers\Admin\PhonesController@edit")->name('edit');
 Route::put('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@update")->name('update');
 Route::delete('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@destroy");
+Route::post('/admin/search', "App\Http\Controllers\Admin\PhonesController@search");

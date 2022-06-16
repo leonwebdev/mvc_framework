@@ -3,8 +3,18 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center my-5">
-            <div class="col-8">
+            <div class="col-4">
                 <a href="{{ route('create') }}" class="btn btn-success col-auto">Add A New Phone</a>
+            </div>
+            <div class="col-4 justify-content-end">
+                <form method="post" action="/admin/search" autocomplete="off" novalidate>
+                    @csrf
+                    <div class="d-flex">
+                        <input id="search" type="text" name="search" class="form-control"
+                            value="{{ old('search') }}" />
+                        <button type="submit" class="btn btn-primary ms-3">Search</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="row justify-content-center my-5">
