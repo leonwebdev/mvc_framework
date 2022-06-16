@@ -10,8 +10,6 @@
 </head>
 
 <body>
-    @include('partials/flash')
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">PHP Project</a>
@@ -70,6 +68,8 @@
             </div>
         </div>
     </nav>
+
+    @include('partials/flash')
 
     @yield('content')
     <script src="/js/app.js"></script>

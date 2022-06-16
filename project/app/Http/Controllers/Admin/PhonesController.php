@@ -39,7 +39,25 @@ class PhonesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $valid = $request->validate([
+            'name' => 'required|string',
+            'screen' => 'required|string',
+            'battery' => 'required|integer',
+            'image' => 'required|image',
+            'description' => 'required|string'
+        ]);
+
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('public');
+        }
+
+        $valid['image'] = basename($path ?? 'default.jpg');
+        //dd($path);
+        Phone::create($valid);
+
+        session()->flash('success', 'Phone successfully created!');
+
+        return redirect('/admin');
     }
 
     /**
