@@ -36,7 +36,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  */
 
 Route::get('/admin', "App\Http\Controllers\Admin\PhonesController@index");
-Route::get('/admin/create', "App\Http\Controllers\Admin\PhonesController@create");
+Route::get('/admin/create', "App\Http\Controllers\Admin\PhonesController@create")->name('create');
 Route::post('/admin', "App\Http\Controllers\Admin\PhonesController@store");
 Route::get('/admin/edit/{id}', "App\Http\Controllers\Admin\PhonesController@edit")->name('edit');
 Route::put('/admin/{id}', "App\Http\Controllers\Admin\PhonesController@update")->name('update');

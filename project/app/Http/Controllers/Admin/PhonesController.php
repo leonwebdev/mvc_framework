@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Phone;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PhonesController extends Controller
 {
@@ -14,7 +15,9 @@ class PhonesController extends Controller
      */
     public function index()
     {
-        //
+        $phones = Phone::all();
+        $title = 'Administrate Dashboard';
+        return view('admin/index', compact('phones', 'title'));
     }
 
     /**
