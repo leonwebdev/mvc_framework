@@ -13,7 +13,7 @@
                     <tbody>
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
+                            <th>Name</th>
                             <th>Display</th>
                             <th>Battery</th>
                             <th>Action</th>

@@ -27,7 +27,8 @@ class PhonesController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Create A New Phone';
+        return view('admin/create', compact('title'));
     }
 
     /**
