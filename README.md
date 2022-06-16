@@ -6,7 +6,7 @@
 ---
 
 -   Project Complete
--   URL: <phpmvc.leon-web-dev.com>
+-   URL: <http://phpmvc.leon-web-dev.com>
 -   Admin: admin@gmail.com
 -   Password: P@ssw0rd
 
