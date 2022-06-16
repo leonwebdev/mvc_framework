@@ -102,6 +102,12 @@ class PhonesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $phone = Phone::find($id);
+        if ($phone->delete()) {
+            session()->flash('success', 'Phone was deleted');
+            return redirect('/admin');
+        }
+        session()->flash('error', 'There was a problem deleting the phone');
+        return redirect('/admin');
     }
 }
