@@ -82,7 +82,31 @@ class PhonesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $valid = $request->validate([
+            'name' => 'required|string',
+            'screen' => 'required|string',
+            'battery' => 'required|integer',
+            'image' => 'nullable|image',
+            'description' => 'required|string'
+        ]);
+
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('public');
+        }
+
+        $phone = Phone::find($id);
+
+        $valid['image'] = basename($path ?? $phone->image);
+
+        $phone->update($valid);
+
+        if ($phone->save()) {
+            session()->flash('success', 'Phone was successfully updated');
+        } else {
+            session()->flash('error', 'There was a problem updating the phone');
+        }
+
+        return redirect('/admin');
     }
 
     /**
