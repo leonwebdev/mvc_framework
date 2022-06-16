@@ -3,7 +3,7 @@
 @section('content')
     <section class="mt-5">
         <div class="container">
-            <table class="table table-striped">
+            <table class="table table-striped align-middle">
                 <thead>
                     <tr>
                         <th scope="col">Image</th>

@@ -3,9 +3,11 @@
 @section('content')
     <section class="mt-5">
         <div class="container">
-            <div class="row col-5">
-                <ul>
-                    <li><img src="/images/{{ $phone->image }}" class="detail"></li>
+            <div class="row justify-content-center">
+                <div class="col-6 mb-5"><img src="/images/{{ $phone->image }}" class="detail"></div>
+            </div>
+            <div class="row justify-content-center">
+                <ul class="col-6 mb-5">
                     <li><strong>Name : </strong>{{ $phone->name }}</li>
                     <li><strong>Display : </strong>{{ $phone->screen }}</li>
                     <li><strong>Battery : </strong>{{ $phone->battery }} mAh</li>

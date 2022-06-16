@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/phones/index', "App\Http\Controllers\PhonesController@index");
 Route::get('/phones/{id}', "App\Http\Controllers\PhonesController@show");
 Route::get('/', function () {
